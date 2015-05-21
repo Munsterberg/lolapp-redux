@@ -1,3 +1,6 @@
+// load dotenv
+require('dotenv').load();
+
 /**
  * Module dependencies.
  */
