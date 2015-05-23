@@ -1,7 +1,7 @@
 var Scrim = require('../models/Scrim');
 
 exports.getScrim = function(req, res) {
-  var teamname;
+  var teamname = [];
 
   Scrim.find({}, function(err, scrims) {
     // var scrimMap = {};
@@ -9,16 +9,17 @@ exports.getScrim = function(req, res) {
     //  scrimMap[scrim._id] = scrim;
     //});
     // console.log(scrimMap);
+    console.log(scrims);
 
-    scrims.forEach(function(scrim) {
-      teamname = scrim.teamname;
-      // console.log(teamname);
-    });
-    console.log(teamname);
+    //scrims.forEach(function(scrim) {
+    //  teamname = scrim.teamname;
+    //  // console.log(teamname);
+    //});
+    //console.log(typeof teamname);
 
     res.render('scrim/scrim', {
-      title: 'Scrim Finder'
-      // teamname: teamname
+      title: 'Scrim Finder',
+      teams: scrims
     });
   });
 
