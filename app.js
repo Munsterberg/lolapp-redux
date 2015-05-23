@@ -121,6 +121,8 @@ app.get('/account/unlink/:provider', passportConf.isAuthenticated, userControlle
 * Test Routes
  */
 app.get('/scrim', scrimController.getScrim);
+app.get('/postscrim', scrimController.getPostScrim);
+app.post('/postscrim', scrimController.postPostScrim);
 
 
 /**

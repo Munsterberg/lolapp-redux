@@ -1,0 +1,30 @@
+extends ../layout
+
+block content
+  .page-header
+    h3 Post a Scrim
+  form.form-horizontal(id='scrim', method='POST')
+    input(type='hidden', name='_csrf', value=_csrf)
+    .form-group
+      label.col-sm-3.control-label(for='teamname') Team Name
+      .col-sm-7
+        input.form-control(type='string', name='teamname', id='teamname', placeholder='TSM', autofocus)
+    .form-group
+      label.col-sm-3.control-label(for='teamcaptain') Team Captain
+      .col-sm-7
+        input.form-control(type='string', name='teamcaptain', id='teamcaptain', placeholder='Bjergsen', autofocus)
+    .radio
+      label
+        input(type='radio', name='region', id='region1', value='na', checked)
+        | North America
+    .radio
+      label
+        input(type='radio', name='region', id='region2', value='euw')
+        | Europe West
+    .radio
+      label
+        input(type='radio', name='region', id='region2', value='eune')
+        | Europe Nordic and East
+    .form-group
+      .col-sm-offset-3.col-sm-7
+        button.btn.btn-success(type='submit') Post
