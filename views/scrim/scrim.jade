@@ -3,6 +3,14 @@ extends ../layout
 block content
   .page-header
     h3 Scrims
-    ul
-      each team in teams
-        li= team.teamname
+  .scrim-challenges
+    each team in teams
+      .row
+        .col-sm-8
+          h1= team.teamname
+          p= team.created_at
+        .col-sm-4(style='margin-top: 20px;')
+          button(type='submit') Challenge
+
+
+
