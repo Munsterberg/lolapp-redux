@@ -9,7 +9,7 @@ block content
         .col-sm-8
           h3= team.teamname
           p= team.created_at
-          p='(Posted at: ' + moment(team.created_at).format("hh:mm:A") + ')'
+          p='(Posted at: ' + moment(team.created_at).format("hh:mm A") + ')'
         .col-sm-4(style='margin-top: 20px;')
           button(type='submit') Challenge
 
