@@ -25,6 +25,7 @@ var passport = require('passport');
 var expressValidator = require('express-validator');
 var connectAssets = require('connect-assets');
 
+
 /**
  * Controllers (route handlers).
  */
@@ -95,6 +96,8 @@ app.use(function(req, res, next) {
   next();
 });
 app.use(express.static(path.join(__dirname, 'public'), { maxAge: 31557600000 }));
+
+app.locals.moment = require('moment');
 
 /**
  * Primary app routes.

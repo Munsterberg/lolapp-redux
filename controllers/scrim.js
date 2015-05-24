@@ -4,7 +4,6 @@ exports.getScrim = function(req, res) {
   Scrim.find({}, function(err, scrims) {
     if(err) throw(err);
 
-
     res.render('scrim/scrim', {
       title: 'Scrim Finder',
       teams: scrims
