@@ -97,6 +97,9 @@ app.use(function(req, res, next) {
 });
 app.use(express.static(path.join(__dirname, 'public'), { maxAge: 31557600000 }));
 
+/*
+* Locals
+ */
 app.locals.moment = require('moment');
 
 /**

@@ -1,7 +1,7 @@
 var Scrim = require('../models/Scrim');
 
 exports.getScrim = function(req, res) {
-  Scrim.find({}, function(err, scrims) {
+  Scrim.find({}).sort('-created_at').exec(function(err, scrims) {
     if(err) throw(err);
 
     res.render('scrim/scrim', {
