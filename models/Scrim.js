@@ -6,11 +6,8 @@ var scrimSchema = new mongoose.Schema({
   region: String,
   created_at: {
     type: Date,
-    default: Date.now
-  },
-  updated_at: {
-    type: Date,
-    default: Date.now
+    default: Date.now,
+    expires: 60
   }
 });
 
