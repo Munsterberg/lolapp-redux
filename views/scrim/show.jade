@@ -1,5 +1,12 @@
 extends ../layout
 
 block content
-  h1 Show
-  p= team.teamname
+  - var teamname = team.teamname
+  - var teamcap = team.teamcaptain
+
+  .page-header
+    h1 Challenge Team
+  .scrim-show
+    p Accepting a scrim is easy! Just message the team captain to arrange a scrim.
+    h3 Team Name: #{teamname}
+    h3 Team Captain: #{teamcap}
