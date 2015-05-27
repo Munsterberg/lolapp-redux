@@ -129,7 +129,7 @@ app.get('/account/unlink/:provider', passportConf.isAuthenticated, userControlle
 app.get('/scrim', scrimController.getScrim);
 app.get('/postscrim', scrimController.getPostScrim);
 app.post('/postscrim', scrimController.postPostScrim);
-app.get('/showscrim', scrimController.getShowScrim);
+app.get('/scrim/:id', scrimController.getShowScrim);
 
 
 /**

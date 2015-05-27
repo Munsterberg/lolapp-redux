@@ -11,7 +11,7 @@ block content
           p= team.created_at
           p='(Posted at: ' + moment(team.created_at).format("hh:mm A") + ')'
         .col-sm-4(style='margin-top: 20px;')
-          button(type='submit') Challenge
+        a(class='btn btn-default', href='/scrim/' + team.id) Challenge
 
 
 

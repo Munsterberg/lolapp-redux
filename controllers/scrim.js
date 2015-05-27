@@ -40,7 +40,14 @@ exports.postPostScrim = function(req, res) {
 };
 
 exports.getShowScrim = function(req, res) {
-  res.render('scrim/show', {
-    title: 'Scrim'
+  Scrim.findById(req.params.id, function(err, scrim) {
+    if(err) throw err;
+
+    console.log(scrim);
+
+    res.render('scrim/show', {
+      title: 'Scrim',
+      team: scrim
+    });
   });
 };
