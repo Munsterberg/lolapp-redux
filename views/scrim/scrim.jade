@@ -10,6 +10,12 @@ block content
           h3= team.teamname
           p= team.created_at
           p='(Posted at: ' + moment(team.created_at).format("hh:mm A") + ')'
+          if team.region == 'na'
+            p North America
+          else if team.region == 'euw'
+            p Europe West
+          else if team.region == 'eune'
+            p Europe Nordic and East
         .col-sm-4(style='margin-top: 20px;')
         a(class='btn btn-default', href='/scrim/' + team.id) Challenge
 
