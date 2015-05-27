@@ -43,8 +43,6 @@ exports.getShowScrim = function(req, res) {
   Scrim.findById(req.params.id, function(err, scrim) {
     if(err) throw err;
 
-    console.log(scrim);
-
     res.render('scrim/show', {
       title: 'Scrim',
       team: scrim
