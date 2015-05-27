@@ -38,3 +38,9 @@ exports.postPostScrim = function(req, res) {
     res.redirect('/scrim');
   });
 };
+
+exports.getShowScrim = function(req, res) {
+  res.render('scrim/show', {
+    title: 'Scrim'
+  });
+};
