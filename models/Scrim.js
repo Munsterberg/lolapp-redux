@@ -7,7 +7,7 @@ var scrimSchema = new mongoose.Schema({
   created_at: {
     type: Date,
     default: Date.now,
-    expires: 60
+    expires: 1800
   }
 });
 
