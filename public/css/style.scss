@@ -1,0 +1,43 @@
+// Variables
+
+$primary-color: #3A539B;
+$accent-color: #D2527F;
+$accent-color-dark: #a8485f;
+$text-color: #000000;
+$text-color-light: #FFFFFF;
+$bg-color: #ECECEC;
+
+
+// Main
+body {
+  background-color: $bg-color;
+}
+
+
+// Navbar
+.navbar-default {
+  background-color: $primary-color;
+
+  .navbar-brand {
+    color: $accent-color;
+  }
+
+  .navbar-nav > li > a {
+    color: $text-color-light;
+  }
+}
+
+.btn-default {
+  background-color: $accent-color;
+  background-image: none;
+  color: $text-color-light;
+  border-color: transparent;
+
+  &:hover {
+    background-color: $accent-color-dark;
+    background-image: none;
+    color: $text-color-light;
+    border-color: transparent;
+
+  }
+}

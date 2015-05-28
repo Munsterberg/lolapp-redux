@@ -24,6 +24,7 @@ var mongoose = require('mongoose');
 var passport = require('passport');
 var expressValidator = require('express-validator');
 var connectAssets = require('connect-assets');
+var sass = require('node-sass');
 
 
 /**
@@ -96,6 +97,11 @@ app.use(function(req, res, next) {
   next();
 });
 app.use(express.static(path.join(__dirname, 'public'), { maxAge: 31557600000 }));
+sass.render({
+  file: '/public/css/style.scss'
+}, function(err, result) {
+  // no idea what goes in here
+});
 
 /*
 * Locals

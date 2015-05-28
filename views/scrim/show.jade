@@ -3,6 +3,7 @@ extends ../layout
 block content
   - var teamname = team.teamname
   - var teamcap = team.teamcaptain
+  - var region = team.region
 
   .page-header
     h1 Challenge Team
@@ -10,3 +11,4 @@ block content
     p Accepting a scrim is easy! Just message the team captain to arrange a scrim.
     h3 Team Name: #{teamname}
     h3 Team Captain: #{teamcap}
+    h3 Region: #{region}
