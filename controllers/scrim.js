@@ -30,6 +30,7 @@ exports.postPostScrim = function(req, res) {
     teamcaptain: req.body.teamcaptain,
     region: req.body.region
   });
+  
 
   scrim.save(function(err) {
     if(err) {
