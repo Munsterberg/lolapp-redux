@@ -11,4 +11,9 @@ block content
     p Accepting a scrim is easy! Just message the team captain to arrange a scrim.
     h3 Team Name: #{teamname}
     h3 Team Captain: #{teamcap}
-    h3 Region: #{region}
+    if region == 'na'
+      h3 Region: North America
+    else if region == 'euw'
+      h3 Region: Europe West
+    else if region == 'eune'
+      h3 Region: Europe Nordic and East
