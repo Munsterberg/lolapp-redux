@@ -1,4 +1,5 @@
 var Scrim = require('../models/Scrim');
+var request = require('request');
 
 exports.getScrim = function(req, res) {
   Scrim.find({}).sort('-created_at').exec(function(err, scrims) {
@@ -30,7 +31,25 @@ exports.postPostScrim = function(req, res) {
     teamcaptain: req.body.teamcaptain,
     region: req.body.region
   });
-  
+
+  var region = req.body.region;
+  var teamcaptain = req.body.teamcaptain;
+  var apiKey = 'c90e16ea-74ce-4e96-8a3b-d8a4ba3449fa';
+  var url = '';
+
+  craftUrl = function(region, teamcaptain, apiKey) {
+    url = 'https://' + region + '.api.pvp.net/api/lol/' + region + '/v1.4/summoner/by-name/'
+    + teamcaptain + '?api_key=' + apiKey;
+
+    request(url, function(error, response, body) {
+      if(!error && response.statusCode == 200) {
+        console.log(body);
+      }
+    });
+  };
+
+  craftUrl(region, teamcaptain, apiKey);
+
 
   scrim.save(function(err) {
     if(err) {
