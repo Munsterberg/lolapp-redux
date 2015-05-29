@@ -56,16 +56,31 @@ exports.postPostScrim = function(req, res) {
     });
   };
 
-  scrim.save(function(err) {
-    craftUrl(region, teamcaptain, apiKey, function() {
-      console.log(val.name);
-    });
+  craftUrl(region, teamcaptain, apiKey, function() {
+    if(teamcaptain == val.name) {
+      scrim.save(function(err) {
+        if(err) {
+          return next(err);
+        }
 
-    if(err) {
-      return next(err);
+        res.redirect('/scrim');
+      });
+    } else {
+      console.log('FAIL');
+      res.redirect('/');
     }
-    res.redirect('/scrim');
   });
+
+  //scrim.save(function(err) {
+  //  craftUrl(region, teamcaptain, apiKey, function() {
+  //    console.log(val.name);
+  //  });
+  //
+  //  if(err) {
+  //    return next(err);
+  //  }
+  //  res.redirect('/scrim');
+  //});
 };
 
 exports.getShowScrim = function(req, res) {
