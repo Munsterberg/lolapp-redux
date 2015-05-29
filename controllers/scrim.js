@@ -36,30 +36,31 @@ exports.postPostScrim = function(req, res) {
   var teamcaptain = req.body.teamcaptain;
   var apiKey = 'c90e16ea-74ce-4e96-8a3b-d8a4ba3449fa';
   var url = '';
+  var parsedBody = {};
+  var val = '';
 
-  craftUrl = function(region, teamcaptain, apiKey) {
+  craftUrl = function(region, teamcaptain, apiKey, callback) {
     url = 'https://' + region + '.api.pvp.net/api/lol/' + region + '/v1.4/summoner/by-name/'
-    + teamcaptain + '?api_key=' + apiKey;
+        + teamcaptain + '?api_key=' + apiKey;
 
     request(url, function(error, response, body) {
       if(!error && response.statusCode == 200) {
-        var parsedBody = JSON.parse(body);
+        parsedBody = JSON.parse(body);
 
         Object.keys(parsedBody).forEach(function(key) {
-          var val = parsedBody[key];
-          console.log(val.name);
+          val = parsedBody[key];
         });
 
-
-        //console.log(parsedBody);
-        //console.log(parsedBody.itch.name)
+        callback();
       }
     });
   };
 
-
   scrim.save(function(err) {
-    craftUrl(region, teamcaptain, apiKey);
+    craftUrl(region, teamcaptain, apiKey, function() {
+      console.log(val.name);
+    });
+
     if(err) {
       return next(err);
     }
