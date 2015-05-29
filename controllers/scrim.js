@@ -43,15 +43,23 @@ exports.postPostScrim = function(req, res) {
 
     request(url, function(error, response, body) {
       if(!error && response.statusCode == 200) {
-        console.log(body);
+        var parsedBody = JSON.parse(body);
+
+        Object.keys(parsedBody).forEach(function(key) {
+          var val = parsedBody[key];
+          console.log(val.name);
+        });
+
+
+        //console.log(parsedBody);
+        //console.log(parsedBody.itch.name)
       }
     });
   };
 
-  craftUrl(region, teamcaptain, apiKey);
-
 
   scrim.save(function(err) {
+    craftUrl(region, teamcaptain, apiKey);
     if(err) {
       return next(err);
     }
