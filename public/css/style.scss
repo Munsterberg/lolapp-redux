@@ -7,10 +7,21 @@ $text-color: #000000;
 $text-color-light: #FFFFFF;
 $bg-color: #ECECEC;
 
+$primary-font: 'Ubuntu', sans-serif;
+$secondary-font: 'Asap', sans-serif;
+
 
 // Main
 body {
   background-color: $bg-color;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: $secondary-font;
+}
+
+p {
+  font-family: $primary-font;  
 }
 
 

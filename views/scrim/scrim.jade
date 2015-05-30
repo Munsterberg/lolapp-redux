@@ -8,8 +8,7 @@ block content
       .row
         .col-sm-8
           h3= team.teamname
-          p= team.created_at
-          p='(Posted at: ' + moment(team.created_at).format("hh:mm A") + ')'
+          p='Posted at: ' + moment(team.created_at).format("hh:mm A")
           if team.region == 'na'
             p North America
           else if team.region == 'euw'

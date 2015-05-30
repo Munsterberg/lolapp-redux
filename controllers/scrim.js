@@ -65,7 +65,7 @@ exports.postPostScrim = function(req, res) {
           return next(err);
         }
 
-        res.redirect('/scrim');
+        res.redirect('/posterror');
       });
     }
   });
@@ -79,5 +79,11 @@ exports.getShowScrim = function(req, res) {
       title: 'Scrim',
       team: scrim
     });
+  });
+};
+
+exports.getScrimError = function(req, res) {
+  res.render('scrim/failscrim', {
+    title: 'Post Failed',
   });
 };

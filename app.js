@@ -136,6 +136,7 @@ app.get('/scrim', scrimController.getScrim);
 app.get('/postscrim', scrimController.getPostScrim);
 app.post('/postscrim', scrimController.postPostScrim);
 app.get('/scrim/:id', scrimController.getShowScrim);
+app.get('/posterror', scrimController.getScrimError);
 
 
 /**
