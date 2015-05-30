@@ -53,7 +53,7 @@ exports.postPostScrim = function(req, res) {
 
         callback();
       } else {
-        res.redirect('/postscrim');
+        res.redirect('/posterror');
       }
     });
   };
@@ -65,7 +65,7 @@ exports.postPostScrim = function(req, res) {
           return next(err);
         }
 
-        res.redirect('/posterror');
+        res.redirect('/scrim');
       });
     }
   });
