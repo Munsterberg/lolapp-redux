@@ -3,6 +3,12 @@ extends ../layout
 block content
   .page-header
     h1 Post a Scrim
+
+  if messages.error
+    .alert.alert-danger.fade-in
+      for error in messages.errors
+        div= error.msg
+
   form.form-horizontal(id='scrim', method='POST')
     input(type='hidden', name='_csrf', value=_csrf)
     .form-group
