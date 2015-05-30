@@ -8,7 +8,7 @@ $text-color-light: #FFFFFF;
 $bg-color: #ECECEC;
 
 $primary-font: 'Ubuntu', sans-serif;
-$secondary-font: 'Asap', sans-serif;
+$secondary-font: 'Roboto', sans-serif;
 
 
 // Main
@@ -21,21 +21,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 p {
-  font-family: $primary-font;  
-}
-
-
-// Navbar
-.navbar-default {
-  background-color: $primary-color;
-
-  .navbar-brand {
-    color: $accent-color;
-  }
-
-  .navbar-nav > li > a {
-    color: $text-color-light;
-  }
+  font-family: $primary-font;
 }
 
 .btn-default {
@@ -59,3 +45,33 @@ p {
 #challenge-btn {
   margin-left: 13px;
 }
+
+
+// Navbar
+.navbar-default {
+  background-color: $primary-color;
+
+  .navbar-brand {
+    color: $accent-color;
+
+    &:hover {
+      color: $accent-color-dark;
+    }
+  }
+
+  .navbar-nav > li > a {
+    color: $text-color-light;
+    font-family: $secondary-font;
+
+    &:hover {
+      color: $accent-color;
+    }
+  }
+}
+
+.navbar-default .navbar-nav
+> .active > a {
+  color: $accent-color;
+}
+
+
