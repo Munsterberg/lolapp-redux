@@ -1,8 +1,8 @@
 // Variables
 
-$primary-color: #3A539B;
-$accent-color: #D2527F;
-$accent-color-dark: #a8485f;
+$primary-color: #3E2723;
+$accent-color: #FF5722;
+$accent-color-dark: #D84315;
 $text-color: #000000;
 $text-color-light: #FFFFFF;
 $bg-color: #ECECEC;
@@ -13,15 +13,15 @@ $secondary-font: 'Roboto', sans-serif;
 
 // Main
 body {
-  background-color: $bg-color;
+  background-color: #FFFFFF;
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: $secondary-font;
+  font-family: $primary-font;
 }
 
 p {
-  font-family: $primary-font;
+  font-family: $secondary-font;
 }
 
 .btn-default {
@@ -40,10 +40,12 @@ p {
 
 #scrim-post-btn {
   margin-top: 30px;
+  box-shadow: -2px 2px 2px 0px rgba(84, 84, 84, 0.60);
 }
 
 #challenge-btn {
   margin-left: 13px;
+  box-shadow: -2px 2px 2px 0px rgba(84, 84, 84, 0.60);
 }
 
 

@@ -30,10 +30,7 @@ var sass = require('node-sass');
 /**
  * Controllers (route handlers).
  */
-var homeController = require('./controllers/home');
-var userController = require('./controllers/user');
 var apiController = require('./controllers/api');
-var contactController = require('./controllers/contact');
 
 var scrimController = require('./controllers/scrim');
 
@@ -110,11 +107,6 @@ app.locals.moment = require('moment');
 
 /**
  * Primary app routes.
- */
-
-
-/*
-* Test Routes
  */
 app.get('/', scrimController.index);
 app.get('/postscrim', scrimController.getPostScrim);
