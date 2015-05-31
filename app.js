@@ -111,13 +111,12 @@ app.locals.moment = require('moment');
 /**
  * Primary app routes.
  */
-app.get('/', homeController.index);
 
 
 /*
 * Test Routes
  */
-app.get('/scrim', scrimController.getScrim);
+app.get('/', scrimController.index);
 app.get('/postscrim', scrimController.getPostScrim);
 app.post('/postscrim', scrimController.postPostScrim);
 app.get('/scrim/:id', scrimController.getShowScrim);

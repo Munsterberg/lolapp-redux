@@ -1,7 +1,7 @@
 var Scrim = require('../models/Scrim');
 var request = require('request');
 
-exports.getScrim = function(req, res) {
+exports.index = function(req, res) {
   Scrim.find({}).sort('-created_at').exec(function(err, scrims) {
     if(err) throw(err);
 
@@ -23,7 +23,7 @@ exports.postPostScrim = function(req, res) {
 
   if(errors) {
     req.flash('errors', errors);
-    return res.redirect('/scrim');
+    return res.redirect('/');
   }
 
   var scrim = new Scrim({
@@ -53,7 +53,8 @@ exports.postPostScrim = function(req, res) {
 
         callback();
       } else {
-        res.redirect('/posterror');
+        req.flash('errors', { msg: 'Your team captain\'s name was not found in the league of legends database!' });
+        return res.redirect('/');
       }
     });
   };
@@ -65,7 +66,7 @@ exports.postPostScrim = function(req, res) {
           return next(err);
         }
 
-        res.redirect('/scrim');
+        res.redirect('/');
       });
     }
   });
