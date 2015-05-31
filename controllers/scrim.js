@@ -60,7 +60,6 @@ exports.postPostScrim = function(req, res) {
   };
 
   craftUrl(region, teamcaptain, apiKey, function() {
-    console.log(val.name);
     if (teamcaptain == val.name) {
       scrim.save(function (err) {
         if (err) {

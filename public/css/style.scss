@@ -24,6 +24,13 @@ p {
   font-family: $secondary-font;
 }
 
+.page-header {
+
+  h1 {
+    color: $accent-color;
+  }
+}
+
 .btn-default {
   background-color: $accent-color;
   background-image: none;
@@ -40,12 +47,12 @@ p {
 
 #scrim-post-btn {
   margin-top: 30px;
-  box-shadow: -2px 2px 2px 0px rgba(84, 84, 84, 0.60);
+  box-shadow: -1px 1px 1px 0px rgba(84, 84, 84, 0.60);
 }
 
 #challenge-btn {
   margin-left: 13px;
-  box-shadow: -2px 2px 2px 0px rgba(84, 84, 84, 0.60);
+  box-shadow: -1px 1px 1px 0px rgba(84, 84, 84, 0.60);
 }
 
 
@@ -74,6 +81,21 @@ p {
 .navbar-default .navbar-nav
 > .active > a {
   color: $accent-color;
+}
+
+// Hacks
+.navbar-default .navbar-brand:hover, .navbar-default .navbar-brand:focus {
+  color: $accent-color;
+}
+
+.navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus {
+  color: $accent-color;
+}
+
+.btn-default:hover, .btn-default:focus, .btn-default.focus, .btn-default:active, .btn-default.active, .open > .dropdown-toggle.btn-default {
+  background-color: $accent-color-dark;
+  color: #ffffff;
+  background-image: none;
 }
 
 
