@@ -5,7 +5,7 @@ $accent-color: #FF5722;
 $accent-color-dark: #D84315;
 $text-color: #000000;
 $text-color-light: #FFFFFF;
-$bg-color: #ECECEC;
+$bg-color: #FFFFFF;
 
 $primary-font: 'Ubuntu', sans-serif;
 $secondary-font: 'Roboto', sans-serif;
@@ -13,7 +13,7 @@ $secondary-font: 'Roboto', sans-serif;
 
 // Main
 body {
-  background-color: #FFFFFF;
+  background-color: $bg-color;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -53,6 +53,10 @@ p {
 #challenge-btn {
   margin-left: 13px;
   box-shadow: -1px 1px 1px 0px rgba(84, 84, 84, 0.60);
+}
+
+#team-title {
+  color: $accent-color;
 }
 
 

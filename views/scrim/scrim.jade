@@ -7,7 +7,7 @@ block content
     each team in teams
       .row
         .col-sm-8
-          h3= team.teamname
+          h3(id='team-title')= team.teamname
           p='Posted at: ' + moment(team.created_at).format("hh:mm A")
           if team.region == 'na'
             p North America

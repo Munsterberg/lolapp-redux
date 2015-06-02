@@ -31,7 +31,7 @@ var sass = require('node-sass');
  * Controllers (route handlers).
  */
 var apiController = require('./controllers/api');
-
+var homeController = require('./controllers/home');
 var scrimController = require('./controllers/scrim');
 
 /**
@@ -113,6 +113,7 @@ app.get('/postscrim', scrimController.getPostScrim);
 app.post('/postscrim', scrimController.postPostScrim);
 app.get('/scrim/:id', scrimController.getShowScrim);
 app.get('/posterror', scrimController.getScrimError);
+app.get('/info', homeController.getInfoPage);
 
 
 /**
