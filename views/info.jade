@@ -3,4 +3,28 @@ extends layout
 block content
   .page-header
     h1 Information
-  .faq-section
+  .faq-section.col-md-8.col-md-offset-2
+    .panel.panel-default
+      .panel-heading
+        .panel-title What is SimpleScrim?
+      .panel-body
+        | SimpleScrim was created for a school project, but I decided to release it after talking to a few LoL
+        | friends. Apparently there is a large demand for a scrim finder, as the current applications are too
+        | complicated. Hopefully, you all find it useful in finding scrims.
+
+    .panel.panel-default
+      .panel-heading
+        .panel-title How does it work?
+      .panel-body
+        | SimpleScrim first confirms that the user exists in the LoL database by issuing an API call to
+        | Riot's API. The initial idea was to implement a system that confirms the link between the team's
+        | captain and the team name, but I wasn't able to complete it before the deadline for my project.
+        | I can still add this function if it's necessary. The main benefit would be to flush out trolls,
+        | and prevent posting a mistake.
+
+    .panel.panel-default
+      .panel-heading
+        .panel-title How do you prevent troll posts?
+      .panel-body
+        | Currently just through moderation.
+

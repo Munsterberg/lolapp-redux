@@ -1,11 +1,11 @@
 // Variables
 
-$primary-color: #3E2723;
+$primary-color: #000000;
 $accent-color: #FF5722;
 $accent-color-dark: #D84315;
 $text-color: #000000;
 $text-color-light: #FFFFFF;
-$bg-color: #FFFFFF;
+$bg-color: #ffffff;
 
 $primary-font: 'Ubuntu', sans-serif;
 $secondary-font: 'Roboto', sans-serif;
@@ -22,6 +22,7 @@ h1, h2, h3, h4, h5, h6 {
 
 p {
   font-family: $secondary-font;
+  color: $text-color;
 }
 
 .page-header {
@@ -86,6 +87,23 @@ p {
 > .active > a {
   color: $accent-color;
 }
+
+// FAQ
+.panel {
+  border-radius: 0px;
+}
+
+.panel-default > .panel-heading {
+  color: $accent-color;
+  border-color: transparent;
+  background-color: $primary-color;
+}
+
+.panel-heading {
+  border-top-right-radius: 0px;
+  border-top-left-radius: 0px;
+}
+
 
 // Hacks
 .navbar-default .navbar-brand:hover, .navbar-default .navbar-brand:focus {
