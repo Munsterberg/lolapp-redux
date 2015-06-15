@@ -10,11 +10,18 @@ block content
   .scrim-show
     .alert.alert-info(role='alert', style='text-align: center;')
       | Accepting a scrim is easy, just message the Team's Captain and wait for a response!
-    h4 Team Name: #{teamname}
-    h4 Team Captain: #{teamcap}
-    if region == 'na'
-      h4 Region: North America
-    else if region == 'euw'
-      h4 Region: Europe West
-    else if region == 'eune'
-      h4 Region: Europe Nordic and East
+    .row(style='text-align: center;')
+      .col-md-4
+        h3 Team Name
+        h1 #{teamname}
+      .col-md-4
+        h3 Team Captain
+        h1 #{teamcap}
+      .col-md-4
+        h3 Region
+        if region == 'na'
+          h1 North America
+        else if region == 'euw'
+          h1 Europe West
+        else if region == 'eune'
+          h1 Europe Nordic and East
