@@ -39,7 +39,7 @@ exports.postPostScrim = function(req, res) {
   var parsedBody = {};
   var val = '';
 
-  craftUrl = function(region, teamcaptain, apiKey, callback) {
+  var craftUrl = function(region, teamcaptain, apiKey, callback) {
     url = 'https://' + region + '.api.pvp.net/api/lol/' + region + '/v1.4/summoner/by-name/'
         + teamcaptain + '?api_key=' + apiKey;
 
