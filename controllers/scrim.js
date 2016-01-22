@@ -66,7 +66,8 @@ exports.postPostScrim = function(req, res) {
     if(teamCap == valName) {
       scrim.save(function(err) {
         if(err) {
-          return next(err);
+          req.flash('errors', { msg: 'You have already created a post!' });
+          return res.redirect('/');
         }
         res.redirect('/');
       });
