@@ -2,7 +2,11 @@ var mongoose = require('mongoose');
 
 var scrimSchema = new mongoose.Schema({
   teamname: String,
-  teamcaptain: String,
+  teamcaptain: {
+    type: String,
+    required: true,
+    unique: true
+  },
   region: String,
   created_at: {
     type: Date,
