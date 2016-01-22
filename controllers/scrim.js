@@ -63,12 +63,11 @@ exports.postPostScrim = function(req, res) {
     var teamCap = teamcaptain.toLowerCase();
     var valName = val.name.toLowerCase();
 
-    if (teamCap == valName) {
-      scrim.save(function (err) {
-        if (err) {
+    if(teamCap == valName) {
+      scrim.save(function(err) {
+        if(err) {
           return next(err);
         }
-
         res.redirect('/');
       });
     }
