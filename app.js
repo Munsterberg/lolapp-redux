@@ -33,6 +33,7 @@ var sass = require('node-sass');
 var apiController = require('./controllers/api');
 var homeController = require('./controllers/home');
 var scrimController = require('./controllers/scrim');
+var tournamentController = require('./controllers/tournament');
 
 /**
  * API keys and Passport configuration.
@@ -114,6 +115,7 @@ app.post('/postscrim', scrimController.postPostScrim);
 app.get('/scrim/:id', scrimController.getShowScrim);
 app.get('/posterror', scrimController.getScrimError);
 app.get('/info', homeController.getInfoPage);
+app.get('/tournaments', tournamentController.showTournaments);
 
 
 /**
