@@ -4,3 +4,41 @@ block content
 
   .page-header
     h1 Register for Tournament Title
+    
+  h3 Rules and Information
+  p A lot of information here.
+  
+  if messages.error
+    .alert.alert-danger.fade-in
+      for error in messages.errors
+        div= error.msg
+        
+  form.form-horizontal(id='tournament-register-form', method='POST')
+    input(type='hidden', name='_csrf', value=_csrf)
+    .form-group
+      label.col-sm-3.control-label(for='teamname') Team Name
+      .col-sm-7
+        input.form-control(type='string', name='teamname', id='teamname', placeholder='TSM', autofocus, required)
+    .form-group 
+      label.col-sm-3.control-label(for='teamcaptain') Team Captain
+      .col-sm-7
+        input.form-control(type='string', name='teamcaptain', id='teamcaptain', placeholder='Yellowstar', autofocus, required)
+    .form-group 
+      label.col-sm-3.control-label(for='playertwo') Player 2
+      .col-sm-7
+        input.form-control(type='string', name='playertwo', id='playertwo', placeholder='Bjergsen', autofocus, required)
+    .form-group 
+      label.col-sm-3.control-label(for='playerthree') Player 3
+      .col-sm-7
+        input.form-control(type='string', name='playerthree', id='playerthree', placeholder='Doublelift', autofocus, required)
+    .form-group 
+      label.col-sm-3.control-label(for='playerfour') Player 4
+      .col-sm-7
+        input.form-control(type='string', name='playerfour', id='playerfour', placeholder='Svenskeren', autofocus, required)
+    .form-group 
+      label.col-sm-3.control-label(for='playerfive') Player 5
+      .col-sm-7
+        input.form-control(type='string', name='playerfive', id='playerfive', placeholder='Hauntzer', autofocus, required)
+     .form-group 
+      .col-sm-offset-3.col-sm-7
+        button.btn.btn-default#scrim-post-btn(type='submit') Submit
