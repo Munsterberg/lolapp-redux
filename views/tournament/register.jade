@@ -12,8 +12,8 @@ block content
     .alert.alert-danger.fade-in
       for error in messages.errors
         div= error.msg
-        
-  form.form-horizontal(id='tournament-register-form', method='POST')
+  
+  form.form-horizontal(id='tournament-register-form', method='POST', action='/tournament-register')
     input(type='hidden', name='_csrf', value=_csrf)
     .form-group
       label.col-sm-3.control-label(for='teamname') Team Name
@@ -22,23 +22,31 @@ block content
     .form-group 
       label.col-sm-3.control-label(for='teamcaptain') Team Captain
       .col-sm-7
-        input.form-control(type='string', name='teamcaptain', id='teamcaptain', placeholder='Yellowstar', autofocus, required)
+        input.form-control(type='string', name='teamcaptain', id='teamcaptain', placeholder='Yellowstar', required)
     .form-group 
       label.col-sm-3.control-label(for='playertwo') Player 2
       .col-sm-7
-        input.form-control(type='string', name='playertwo', id='playertwo', placeholder='Bjergsen', autofocus, required)
+        input.form-control(type='string', name='playertwo', id='playertwo', placeholder='Bjergsen', required)
     .form-group 
       label.col-sm-3.control-label(for='playerthree') Player 3
       .col-sm-7
-        input.form-control(type='string', name='playerthree', id='playerthree', placeholder='Doublelift', autofocus, required)
+        input.form-control(type='string', name='playerthree', id='playerthree', placeholder='Doublelift', required)
     .form-group 
       label.col-sm-3.control-label(for='playerfour') Player 4
       .col-sm-7
-        input.form-control(type='string', name='playerfour', id='playerfour', placeholder='Svenskeren', autofocus, required)
+        input.form-control(type='string', name='playerfour', id='playerfour', placeholder='Svenskeren', required)
     .form-group 
       label.col-sm-3.control-label(for='playerfive') Player 5
       .col-sm-7
-        input.form-control(type='string', name='playerfive', id='playerfive', placeholder='Hauntzer', autofocus, required)
+        input.form-control(type='string', name='playerfive', id='playerfive', placeholder='Hauntzer', required)
+     .form-group 
+      label.col-sm-3.control-label(for='backupone') Substitute 1
+      .col-sm-7
+        input.form-control(type='string', name='backupone', id='backupone', placeholder='Munsterberg')
+     .form-group 
+      label.col-sm-3.control-label(for='backuptwo') Substitute 2
+      .col-sm-7
+        input.form-control(type='string', name='backuptwo', id='backuptwo', placeholder='Munsterberg')
      .form-group 
       .col-sm-offset-3.col-sm-7
         button.btn.btn-default#scrim-post-btn(type='submit') Submit

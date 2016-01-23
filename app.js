@@ -117,6 +117,7 @@ app.get('/posterror', scrimController.getScrimError);
 app.get('/info', homeController.getInfoPage);
 app.get('/tournaments', tournamentController.showTournaments);
 app.get('/tournament-register', tournamentController.getRegister);
+app.post('/tournament-register', tournamentController.postRegister);
 
 
 /**
