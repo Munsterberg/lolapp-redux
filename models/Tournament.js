@@ -33,11 +33,13 @@ var tournamentSchema = new mongoose.Schema({
   },
   backupOne: {
     type: String,
-    unique: true
+    unique: true,
+    default: null
   },
   backupTwo: {
     type: String,
-    unique: true
+    unique: true,
+    default: null
   },
   created_at: {
     type: Date,
