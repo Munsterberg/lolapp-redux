@@ -1,22 +1,20 @@
 var Tournament = require('../models/Tournament');
 
-exports.showTournaments = function(req, res) {
-  var checkSubmissions = function() {
-    Tournament.find({}).exec(function(err, teams) {
-      if(err) {
-        throw(err);
-        console.log('Error retrieving teams!');
-      }
-      if(teams.length == 16) {
-        console.log('FULL');
-      }
+exports.showTournaments = function(req, res) {  
+  Tournament.find({}, function(err, teams) {
+    if(err) {
+      console.log('Error retrieving teams!');
+    }
+    if(teams.length == 16) {
+      var fullTournmanet = true;
+      console.log('FULL');
+    }
+    
+    console.log(fullTournmanet);
+    res.render('tournament/show', {
+      title:'Tournaments',
+      fullTournament: fullTournmanet
     });
-  }
-  
-  checkSubmissions();
-  
-  res.render('tournament/show', {
-    title: 'Tournaments'
   });
 };
 
