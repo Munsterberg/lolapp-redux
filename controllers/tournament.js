@@ -1,6 +1,20 @@
 var Tournament = require('../models/Tournament');
 
 exports.showTournaments = function(req, res) {
+  var checkSubmissions = function() {
+    Tournament.find({}).exec(function(err, teams) {
+      if(err) {
+        throw(err);
+        console.log('Error retrieving teams!');
+      }
+      if(teams.length == 16) {
+        console.log('FULL');
+      }
+    });
+  }
+  
+  checkSubmissions();
+  
   res.render('tournament/show', {
     title: 'Tournaments'
   });
@@ -33,6 +47,7 @@ exports.postRegister = function(req, res) {
   
   tournament.save(function(err) {
     if(err) {
+      console.log(err);
       req.flash('errors', { msg: 'You have already submitted a team, or one of your players is already on a registered team!' });
       return res.redirect('/tournaments');
     }
