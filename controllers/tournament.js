@@ -5,7 +5,7 @@ exports.showTournaments = function(req, res) {
     if(err) {
       console.log('Error retrieving teams!');
     }
-    if(teams.length == 16) {
+    if(teams.length >= 16) {
       var fullTournmanet = true;
       console.log('FULL');
     }
@@ -43,13 +43,28 @@ exports.postRegister = function(req, res) {
     backupTwo: req.body.backuptwo
   });
   
-  tournament.save(function(err) {
+  Tournament.find({}, function(err, teams) {
     if(err) {
-      console.log(err);
-      req.flash('errors', { msg: 'You have already submitted a team, or one of your players is already on a registered team!' });
+      console.log('Error retrieving teams!');
+    }
+    if(teams.length >= 16) {
+      var fullTournmanet = true;
+      console.log('FULL');
+    } 
+    if(!fullTournmanet) {
+      console.log(fullTournmanet);
+      tournament.save(function(err) {
+        if(err) {
+          console.log(err);
+          req.flash('errors', { msg: 'You have already submitted a team, or one of your players is already on a registered team! Please try again.' });
+          return res.redirect('/tournaments');
+        }
+        // add an req.flash but a success message here
+        res.redirect('/tournaments');
+      });
+    } else if(fullTournmanet == true) {
+      req.flash('errors', { msg: 'This tournament is already full! :(' });
       return res.redirect('/tournaments');
     }
-    // add an req.flash but a success message here
-    res.redirect('/tournaments');
   });
 };
