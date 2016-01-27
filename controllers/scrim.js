@@ -53,7 +53,7 @@ exports.postPostScrim = function(req, res) {
 
         callback();
       } else {
-        req.flash('errors', { msg: 'Your team captain\'s name was not found in the league of legends database!' });
+        req.flash('errors', { msg: 'Your team captain\'s name was not found in the League of Legends database!' });
         return res.redirect('/');
       }
     });
