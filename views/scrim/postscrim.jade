@@ -11,7 +11,7 @@ block content
       for error in messages.errors
         div= error.msg
 
-  form.form-horizontal(id='scrim', method='POST')
+  form.form-horizontal(id='scrim', method='POST', action='/postscrim')
     input(type='hidden', name='_csrf', value=_csrf)
     .form-group
       label.col-sm-3.control-label(for='teamname') Team Name
