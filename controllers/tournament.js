@@ -7,10 +7,8 @@ exports.showTournaments = function(req, res) {
     }
     if(teams.length >= 16) {
       var fullTournmanet = true;
-      console.log('FULL');
     }
-    
-    console.log(fullTournmanet);
+   
     res.render('tournament/show', {
       title:'Tournaments',
       fullTournament: fullTournmanet
@@ -49,10 +47,9 @@ exports.postRegister = function(req, res) {
     }
     if(teams.length >= 16) {
       var fullTournmanet = true;
-      console.log('FULL');
     } 
+    
     if(!fullTournmanet) {
-      console.log(fullTournmanet);
       tournament.save(function(err) {
         if(err) {
           console.log(err);
