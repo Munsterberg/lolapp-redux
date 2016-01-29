@@ -60,7 +60,7 @@ exports.postRegister = function(req, res) {
         res.redirect('/tournaments');
       });
     } else if(fullTournmanet == true) {
-      req.flash('errors', { msg: 'This tournament is already full! :(' });
+      req.flash('errors', { msg: 'This tournament is already full. Please register for a new tournament.' });
       return res.redirect('/tournaments');
     }
   });
